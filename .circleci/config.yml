@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+    build:
+        docker:
+            - image: circleci/node:11
+
+        working_directory: ~/excel-comparator
+
+        steps:
+            - checkout
+            - run: npm ci
+            - run: npm run build
+
+workflows:
+    version: 2
+    default_workflow:
+        jobs:
+            - build

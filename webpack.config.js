@@ -19,7 +19,7 @@ module.exports = (env, options) => {
             modules: [path.resolve("./node_modules"), path.resolve("./src")]
         },
         output: {
-            path: path.join(__dirname, "/dist/app"),
+            path: path.join(__dirname, "/dist"),
             filename: dev ? "[name].js" : "[name].[hash].js",
             chunkFilename: dev ? "[name].js" : "[name].[hash].js",
             publicPath: "/"

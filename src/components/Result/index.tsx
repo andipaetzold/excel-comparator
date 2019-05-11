@@ -148,7 +148,8 @@ export default function Result({ sheetLeft, sheetRight, options }: Props) {
                 visible={sheetInModal !== undefined}
                 onOk={() => setSheetInModal(undefined)}
                 cancelButtonProps={{ style: { display: "none" } }}
-                width="90%"
+                width="1080"
+                style={{ top: 0, paddingBottom: 0 }}
             >
                 {sheetInModal && <SheetTable sheet={sheetInModal} />}
             </Modal>

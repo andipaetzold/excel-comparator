@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "excel-comparator"
+  },
+  "targets": {
+    "excel-comparator": {
+      "hosting": {
+        "app": [
+          "excel-comparator"
+        ]
+      }
+    }
+  }
+}

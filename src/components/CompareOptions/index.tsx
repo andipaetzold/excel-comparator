@@ -37,7 +37,6 @@ export default function CompareOptions({ headersLeft, headersRight, onChange }: 
     );
 
     useEffect(() => {
-        console.log(options);
         const lastOption = options[options.length - 1];
         if (lastOption.left !== null && lastOption.right !== null) {
             setOptions(opt => [...opt, { left: null, right: null }]);

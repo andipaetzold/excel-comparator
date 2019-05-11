@@ -1,6 +1,8 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import CompareOption from "types/CompareOption";
 import Sheet from "types/Sheet";
+import { Modal, Button } from "antd";
+import SheetTable from "components/SheetTable";
 
 interface Props {
     sheetLeft: Sheet;
@@ -9,6 +11,8 @@ interface Props {
 }
 
 export default function Result({ sheetLeft, sheetRight, options }: Props) {
+    const [sheetInModal, setSheetInModal] = useState<Sheet | undefined>();
+
     const isEqual = useCallback(
         (left: any, right: any) => {
             for (const option of options) {
@@ -101,13 +105,53 @@ export default function Result({ sheetLeft, sheetRight, options }: Props) {
     );
 
     return (
-        <ul>
-            <li>Zeilen links, die keine übereinstimmende Zeile rechts haben: {missingLeft.length}</li>
-            <li>Zeilen rechts, die keine übereinstimmende Zeile links haben: {missingRight.length}</li>
-            <li>Zeilen links, die eine übereinstimmende Zeile rechts haben: {matchingLeft.length}</li>
-            <li>Zeilen rechts, die eine übereinstimmende Zeile links haben: {matchingRight.length}</li>
-            <li>Duplikate Links: {duplicateLeft.length}</li>
-            <li>Duplikate Rechts: {duplicateRight.length}</li>
-        </ul>
+        <>
+            <ul>
+                <li>
+                    Zeilen links, die keine übereinstimmende Zeile rechts haben:{" "}
+                    <Button type="link" onClick={() => setSheetInModal({ headers: sheetLeft.headers, data: missingLeft })}>
+                        {missingLeft.length}
+                    </Button>
+                </li>
+                <li>
+                    Zeilen rechts, die keine übereinstimmende Zeile links haben:{" "}
+                    <Button type="link" onClick={() => setSheetInModal({ headers: sheetRight.headers, data: missingRight })}>
+                        {missingRight.length}
+                    </Button>
+                </li>
+                <li>
+                    Zeilen links, die eine übereinstimmende Zeile rechts haben:{" "}
+                    <Button type="link" onClick={() => setSheetInModal({ headers: sheetLeft.headers, data: matchingLeft })}>
+                        {matchingLeft.length}
+                    </Button>
+                </li>
+                <li>
+                    Zeilen rechts, die eine übereinstimmende Zeile links haben:{" "}
+                    <Button type="link" onClick={() => setSheetInModal({ headers: sheetRight.headers, data: matchingRight })}>
+                        {matchingRight.length}
+                    </Button>
+                </li>
+                <li>
+                    Duplikate Links:{" "}
+                    <Button type="link" onClick={() => setSheetInModal({ headers: sheetLeft.headers, data: duplicateLeft })}>
+                        {duplicateLeft.length}
+                    </Button>
+                </li>
+                <li>
+                    Duplikate Rechts:{" "}
+                    <Button type="link" onClick={() => setSheetInModal({ headers: sheetRight.headers, data: duplicateRight })}>
+                        {duplicateRight.length}
+                    </Button>
+                </li>
+            </ul>
+            <Modal
+                visible={sheetInModal !== undefined}
+                onOk={() => setSheetInModal(undefined)}
+                cancelButtonProps={{ style: { display: "none" } }}
+                width="90%"
+            >
+                {sheetInModal && <SheetTable sheet={sheetInModal} />}
+            </Modal>
+        </>
     );
 }

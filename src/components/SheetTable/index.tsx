@@ -1,14 +1,13 @@
-import { Table as AntTable } from "antd";
+import { Table } from "antd";
 import { ColumnProps } from "antd/lib/table";
 import React from "react";
-import getColumnName from "services/getColumnName";
 import Sheet from "types/Sheet";
 
 interface Props {
     sheet: Sheet;
 }
 
-export default function Table({ sheet }: Props) {
+export default function SheetTable({ sheet }: Props) {
     const columns: ColumnProps<any>[] = sheet.headers.map(
         (header, index) =>
             ({
@@ -18,5 +17,5 @@ export default function Table({ sheet }: Props) {
             } as ColumnProps<any>)
     );
 
-    return <AntTable columns={columns} size="small" dataSource={sheet.data} rowKey={row => row.key} />;
+    return <Table columns={columns} size="small" dataSource={sheet.data} rowKey={row => row.key} />;
 }

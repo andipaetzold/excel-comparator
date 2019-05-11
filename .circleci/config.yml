@@ -52,7 +52,7 @@ jobs:
             - restore_installed_repo
             - attach_workspace:
                   at: .
-            - run: npm run firebase -- use race-comparator
+            - run: npm run firebase -- use excel-comparator
             - run: npm run firebase -- deploy --force --non-interactive -m $CIRCLE_SHA1 --token "$FIREBASE_TOKEN"
 
 workflows:

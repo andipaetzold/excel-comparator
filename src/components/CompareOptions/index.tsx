@@ -45,44 +45,32 @@ export default function CompareOptions({ headersLeft, headersRight, onChange }: 
 
     useEffect(() => onChange(options.slice(0, -1)), [onChange, options]);
 
-    return (
-        <Grid>
-            {options.map((optionTuple, optionIndex) => (
-                <Row key={optionIndex} gutter={10}>
-                    <Col span={12}>
-                        <Select<number | null>
-                            style={{ width: "100%" }}
-                            value={optionTuple.left}
-                            onChange={v => setLeftOption(optionIndex, v)}
-                        >
-                            <Select.Option key={"null"} value={null as any}>
-                                ---
-                            </Select.Option>
-                            {headersLeft.map((header, value) => (
-                                <Select.Option key={header} value={value}>
-                                    {header}
-                                </Select.Option>
-                            ))}
-                        </Select>
-                    </Col>
-                    <Col span={12}>
-                        <Select<number | null>
-                            style={{ width: "100%" }}
-                            value={optionTuple.right}
-                            onChange={v => setRightOption(optionIndex, v)}
-                        >
-                            <Select.Option key={"null"} value={null as any}>
-                                ---
-                            </Select.Option>
-                            {headersRight.map((header, value) => (
-                                <Select.Option key={header} value={value}>
-                                    {header}
-                                </Select.Option>
-                            ))}
-                        </Select>
-                    </Col>
-                </Row>
-            ))}
-        </Grid>
-    );
+    return options.map((optionTuple, optionIndex) => (
+        <Row key={optionIndex} gutter={10}>
+            <Col span={12}>
+                <Select<number | null> style={{ width: "100%" }} value={optionTuple.left} onChange={v => setLeftOption(optionIndex, v)}>
+                    <Select.Option key={"null"} value={null as any}>
+                        ---
+                    </Select.Option>
+                    {headersLeft.map((header, value) => (
+                        <Select.Option key={header} value={value}>
+                            {header}
+                        </Select.Option>
+                    ))}
+                </Select>
+            </Col>
+            <Col span={12}>
+                <Select<number | null> style={{ width: "100%" }} value={optionTuple.right} onChange={v => setRightOption(optionIndex, v)}>
+                    <Select.Option key={"null"} value={null as any}>
+                        ---
+                    </Select.Option>
+                    {headersRight.map((header, value) => (
+                        <Select.Option key={header} value={value}>
+                            {header}
+                        </Select.Option>
+                    ))}
+                </Select>
+            </Col>
+        </Row>
+    ));
 }

@@ -11,7 +11,7 @@ export default function extractData(sheet: XLSX.Sheet, headerCount: number) {
             const headerChar = getColumnName(headerIndex);
             const cellRef = `${headerChar}${i}`;
             const cell = sheet[cellRef];
-            row[headerIndex] = cell && cell.v;
+            row[headerIndex] = cell && cell.v.toString().trim();
         }
 
         if (Object.values(row).filter(v => v !== undefined).length === 0) {

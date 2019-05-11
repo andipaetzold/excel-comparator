@@ -17,5 +17,5 @@ export default function SheetTable({ sheet }: Props) {
             } as ColumnProps<any>)
     );
 
-    return <Table columns={columns} size="small" dataSource={sheet.data} rowKey={row => row.key} />;
+    return <Table columns={columns} scroll={{ x: true }} size="small" dataSource={sheet.data} rowKey={row => row.key} />;
 }

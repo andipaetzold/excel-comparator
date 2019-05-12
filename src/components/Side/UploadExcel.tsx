@@ -24,7 +24,7 @@ export default function UploadExcel({ onUpload }: Props) {
     }, []);
 
     return (
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", marginBottom: "10px" }}>
             <Upload
                 accept="application/msexcel,vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                 showUploadList={false}

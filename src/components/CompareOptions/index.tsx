@@ -1,4 +1,4 @@
-import { Col, Row, Select } from "antd";
+import { Card, Col, Row, Select } from "antd";
 import React, { useCallback, useEffect, useState } from "react";
 import CompareOption from "types/CompareOption";
 
@@ -45,7 +45,7 @@ export default function CompareOptions({ headersLeft, headersRight, onChange }: 
     useEffect(() => onChange(options.slice(0, -1)), [onChange, options]);
 
     return (
-        <>
+        <Card>
             {options.map((optionTuple, optionIndex) => (
                 <Row key={optionIndex} gutter={10}>
                     <Col span={12}>
@@ -82,6 +82,6 @@ export default function CompareOptions({ headersLeft, headersRight, onChange }: 
                     </Col>
                 </Row>
             ))}
-        </>
+        </Card>
     );
 }

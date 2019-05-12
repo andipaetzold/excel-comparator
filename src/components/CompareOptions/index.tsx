@@ -1,6 +1,5 @@
-import React, { useState, useCallback, useEffect } from "react";
-import Grid from "antd/lib/card/Grid";
-import { Row, Col, Select } from "antd";
+import { Col, Row, Select } from "antd";
+import React, { useCallback, useEffect, useState } from "react";
 import CompareOption from "types/CompareOption";
 
 interface Props {

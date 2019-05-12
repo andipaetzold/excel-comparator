@@ -24,14 +24,16 @@ export default function UploadExcel({ onUpload }: Props) {
     }, []);
 
     return (
-        <Upload
-            accept="application/msexcel,vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-            showUploadList={false}
-            customRequest={handleUpload}
-        >
-            <Button>
-                <Icon type="upload" /> Upload
-            </Button>
-        </Upload>
+        <div style={{ textAlign: "center" }}>
+            <Upload
+                accept="application/msexcel,vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                showUploadList={false}
+                customRequest={handleUpload}
+            >
+                <Button>
+                    <Icon type="upload" /> Upload
+                </Button>
+            </Upload>
+        </div>
     );
 }

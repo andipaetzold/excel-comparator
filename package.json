@@ -27,7 +27,7 @@
     "dependencies": {
         "@types/react": "16.8.17",
         "@types/react-dom": "16.8.4",
-        "antd": "3.18.0",
+        "antd": "3.18.1",
         "firebase-tools": "6.9.2",
         "i18next": "15.1.0",
         "i18next-browser-languagedetector": "3.0.1",

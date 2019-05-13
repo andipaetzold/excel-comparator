@@ -11,10 +11,17 @@ export default function extractData(sheet: XLSX.Sheet, headerCount: number) {
             const headerChar = getColumnName(headerIndex);
             const cellRef = `${headerChar}${i}`;
             const cell = sheet[cellRef];
-            row[headerIndex] = cell && cell.v.toString().trim();
+
+            if (!cell) {
+                row[headerIndex] = "";
+            } else if (cell.w) {
+                row[headerIndex] = cell.w.toString().trim();
+            } else if (cell.v) {
+                row[headerIndex] = cell.v.toString().trim();
+            }
         }
 
-        if (Object.values(row).filter(v => v !== undefined).length === 0) {
+        if (Object.values(row).filter(v => v !== '').length === 0) {
             break;
         }
 

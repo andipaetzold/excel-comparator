@@ -6,22 +6,19 @@ export default function extractData(sheet: XLSX.Sheet, headerCount: number) {
 
     let i = 2;
     while (true) {
-        const row: any = {};
+        const row: { [ref: string]: { cell: any; value: string } } = {};
         for (let headerIndex = 0; headerIndex < headerCount; ++headerIndex) {
             const headerChar = getColumnName(headerIndex);
             const cellRef = `${headerChar}${i}`;
-            const cell = sheet[cellRef];
 
-            if (!cell) {
-                row[headerIndex] = "";
-            } else if (cell.w) {
-                row[headerIndex] = cell.w.toString().trim();
-            } else if (cell.v) {
-                row[headerIndex] = cell.v.toString().trim();
-            }
+            const cell = sheet[cellRef];
+            row[headerIndex] = {
+                cell,
+                value: getValue(cell)
+            };
         }
 
-        if (Object.values(row).filter(v => v !== '').length === 0) {
+        if (Object.values(row).filter(cell => cell.value !== "").length === 0) {
             break;
         }
 
@@ -30,4 +27,16 @@ export default function extractData(sheet: XLSX.Sheet, headerCount: number) {
     }
 
     return result;
+}
+
+function getValue(cell: any): string {
+    if (!cell) {
+        return "";
+    } else if (cell.w) {
+        return cell.w.toString().trim();
+    } else if (cell.v) {
+        return cell.v.toString().trim();
+    } else {
+        return "";
+    }
 }

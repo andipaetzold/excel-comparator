@@ -20,7 +20,7 @@ export default function Result({ sheetLeft, sheetRight, options }: Props) {
                     continue;
                 }
 
-                if (left[option.left] !== right[option.right]) {
+                if (left[option.left].value !== right[option.right].value) {
                     return false;
                 }
             }
@@ -37,7 +37,7 @@ export default function Result({ sheetLeft, sheetRight, options }: Props) {
                     continue;
                 }
 
-                if (row1[option.left] !== row2[option.left]) {
+                if (row1[option.left].value !== row2[option.left].value) {
                     return false;
                 }
             }
@@ -54,7 +54,7 @@ export default function Result({ sheetLeft, sheetRight, options }: Props) {
                     continue;
                 }
 
-                if (row1[option.right] !== row2[option.right]) {
+                if (row1[option.right].value !== row2[option.right].value) {
                     return false;
                 }
             }

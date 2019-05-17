@@ -12,6 +12,7 @@ export default function SheetTable({ sheet }: Props) {
         (header, index) =>
             ({
                 dataIndex: index.toString(),
+                render: ({ value }) => value,
                 key: index,
                 title: header
             } as ColumnProps<any>)

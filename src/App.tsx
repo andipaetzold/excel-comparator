@@ -1,4 +1,4 @@
-import { Col, Row, Card } from "antd";
+import { Card, Col, Row } from "antd";
 import CompareOptions from "components/CompareOptions";
 import Result from "components/Result";
 import Side from "components/Side";
@@ -6,7 +6,6 @@ import React, { useMemo, useState } from "react";
 import extractSheet from "services/extractSheet";
 import CompareOption from "types/CompareOption";
 import XLSX from "xlsx";
-import Grid from "antd/lib/card/Grid";
 
 export default function App() {
     const [excelSheetLeft, setSheetLeft] = useState<XLSX.WorkSheet | undefined>();

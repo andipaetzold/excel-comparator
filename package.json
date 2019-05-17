@@ -28,7 +28,7 @@
         "@types/react": "16.8.17",
         "@types/react-dom": "16.8.4",
         "antd": "3.18.1",
-        "firebase-tools": "6.9.2",
+        "firebase-tools": "6.10.0",
         "i18next": "15.1.1",
         "i18next-browser-languagedetector": "3.0.1",
         "react": "16.8.6",

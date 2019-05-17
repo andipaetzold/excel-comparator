@@ -2,6 +2,7 @@ import { Table } from "antd";
 import { ColumnProps } from "antd/lib/table";
 import React from "react";
 import Sheet from "types/Sheet";
+import Download from "components/Download";
 
 interface Props {
     sheet: Sheet;
@@ -18,5 +19,14 @@ export default function SheetTable({ sheet }: Props) {
             } as ColumnProps<any>)
     );
 
-    return <Table columns={columns} scroll={{ x: true }} size="small" dataSource={sheet.data} rowKey={row => row.key} />;
+    return (
+        <Table
+            columns={columns}
+            scroll={{ x: true }}
+            size="small"
+            dataSource={sheet.data}
+            rowKey={(_row, index) => index.toString()}
+            footer={() => <Download sheet={sheet} />}
+        />
+    );
 }

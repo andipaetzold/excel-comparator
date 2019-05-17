@@ -1,6 +1,11 @@
+import { CellObject } from "xlsx/types";
+
 export default interface Sheet {
     headers: string[];
     data: {
-        key: number;
+        [columnIndex: string]: {
+            cell: CellObject;
+            value: string;
+        };
     }[];
 }

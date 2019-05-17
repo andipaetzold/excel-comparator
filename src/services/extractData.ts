@@ -1,17 +1,16 @@
-import XLSX from "xlsx";
+import XLSX, { CellObject } from "xlsx";
 import getColumnName from "./getColumnName";
 
 export default function extractData(sheet: XLSX.Sheet, headerCount: number) {
     const result = [];
-
     let i = 2;
     while (true) {
-        const row: { [ref: string]: { cell: any; value: string } } = {};
+        const row: { [ref: string]: { cell: CellObject; value: string } } = {};
         for (let headerIndex = 0; headerIndex < headerCount; ++headerIndex) {
             const headerChar = getColumnName(headerIndex);
             const cellRef = `${headerChar}${i}`;
 
-            const cell = sheet[cellRef];
+            const cell: CellObject = sheet[cellRef];
             row[headerIndex] = {
                 cell,
                 value: getValue(cell)
@@ -22,7 +21,7 @@ export default function extractData(sheet: XLSX.Sheet, headerCount: number) {
             break;
         }
 
-        result.push({ ...row, key: i });
+        result.push(row);
         ++i;
     }
 

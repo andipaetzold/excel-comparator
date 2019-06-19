@@ -29,7 +29,7 @@
         "@types/react-dom": "16.8.4",
         "antd": "3.19.6",
         "firebase-tools": "7.0.0",
-        "i18next": "17.0.3",
+        "i18next": "17.0.4",
         "i18next-browser-languagedetector": "3.0.1",
         "react": "16.8.6",
         "react-dom": "16.8.6",

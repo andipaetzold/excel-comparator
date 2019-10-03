@@ -31,8 +31,8 @@
         "firebase-tools": "7.4.0",
         "i18next": "17.0.18",
         "i18next-browser-languagedetector": "3.0.3",
-        "react": "16.10.1",
-        "react-dom": "16.10.1",
+        "react": "16.10.2",
+        "react-dom": "16.10.2",
         "react-i18next": "10.13.1",
         "utility-types": "3.8.0",
         "xlsx": "0.15.1"

@@ -1,5 +1,5 @@
+import { Button, Icon, Upload } from "antd";
 import React, { useCallback } from "react";
-import { Upload, Button, Icon } from "antd";
 import XLSX from "xlsx";
 
 interface Props {
@@ -7,7 +7,8 @@ interface Props {
 }
 
 export default function UploadExcel({ onUpload }: Props) {
-    const handleUpload = useCallback(({ file }: { file: File }) => {
+    const handleUpload = useCallback((object: object) => {
+        const { file } = object as { file: File };
         const reader = new FileReader();
 
         reader.onloadend = () => {

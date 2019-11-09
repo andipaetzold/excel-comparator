@@ -34,7 +34,7 @@
         "react": "16.11.0",
         "react-dom": "16.11.0",
         "react-i18next": "11.1.0",
-        "utility-types": "3.9.0",
+        "utility-types": "3.10.0",
         "xlsx": "0.15.1"
     }
 }

@@ -14,7 +14,7 @@
     },
     "devDependencies": {
         "awesome-typescript-loader": "5.2.1",
-        "css-loader": "3.6.0",
+        "css-loader": "4.3.0",
         "hard-source-webpack-plugin": "0.13.1",
         "html-webpack-plugin": "4.4.1",
         "style-loader": "1.2.1",

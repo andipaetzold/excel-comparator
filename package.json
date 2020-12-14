@@ -33,7 +33,7 @@
         "i18next-browser-languagedetector": "4.3.1",
         "react": "16.14.0",
         "react-dom": "16.14.0",
-        "react-i18next": "11.8.3",
+        "react-i18next": "11.8.4",
         "utility-types": "3.10.0",
         "xlsx": "0.16.9"
     }

@@ -1,8 +1,7 @@
 import { Table } from "antd";
 import { ColumnProps } from "antd/lib/table";
-import React from "react";
-import Sheet from "types/Sheet";
-import Download from "components/Download";
+import Sheet from "../../types/Sheet";
+import Download from "../../components/Download";
 
 interface Props {
     sheet: Sheet;

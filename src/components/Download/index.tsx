@@ -1,7 +1,7 @@
 import { Button } from "antd";
-import React, { useCallback } from "react";
-import getColumnName from "services/getColumnName";
-import Sheet from "types/Sheet";
+import { useCallback } from "react";
+import getColumnName from "../../services/getColumnName";
+import Sheet from "../../types/Sheet";
 import XLSX, { CellObject } from "xlsx";
 
 interface Props {

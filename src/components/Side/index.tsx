@@ -1,5 +1,4 @@
-import React from "react";
-import Sheet from "types/Sheet";
+import Sheet from "../../types/Sheet";
 import XLSX from "xlsx";
 import UploadExcel from "./UploadExcel";
 import SheetTable from "../SheetTable";

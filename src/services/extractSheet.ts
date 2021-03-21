@@ -1,5 +1,5 @@
 import XLSX from "xlsx";
-import Sheet from "types/Sheet";
+import Sheet from "../types/Sheet";
 import extractData from "./extractData";
 import extractHeaders from "./extractHeaders";
 

@@ -1,8 +1,8 @@
-import React, { useCallback, useMemo, useState } from "react";
-import CompareOption from "types/CompareOption";
-import Sheet from "types/Sheet";
+import { useCallback, useMemo, useState } from "react";
+import CompareOption from "../../types/CompareOption";
+import Sheet from "../../types/Sheet";
 import { Modal, Button } from "antd";
-import SheetTable from "components/SheetTable";
+import SheetTable from "../../components/SheetTable";
 
 interface Props {
     sheetLeft: Sheet;

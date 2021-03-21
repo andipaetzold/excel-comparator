@@ -1,5 +1,5 @@
 import { Button, Icon, Upload } from "antd";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import XLSX from "xlsx";
 
 interface Props {
@@ -22,7 +22,7 @@ export default function UploadExcel({ onUpload }: Props) {
             onUpload(sheet);
         };
         reader.readAsArrayBuffer(file);
-    }, []);
+    }, [onUpload]);
 
     return (
         <div style={{ textAlign: "center", marginBottom: "10px" }}>

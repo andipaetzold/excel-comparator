@@ -1,6 +1,6 @@
 import { Card, Col, Row, Select } from "antd";
-import React, { useCallback, useEffect, useState } from "react";
-import CompareOption from "types/CompareOption";
+import { useCallback, useEffect, useState } from "react";
+import CompareOption from "../../types/CompareOption";
 
 interface Props {
     headersLeft: string[];

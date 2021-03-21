@@ -1,10 +1,10 @@
 import { Card, Col, Row } from "antd";
-import CompareOptions from "components/CompareOptions";
-import Result from "components/Result";
-import Side from "components/Side";
-import React, { useMemo, useState } from "react";
-import extractSheet from "services/extractSheet";
-import CompareOption from "types/CompareOption";
+import CompareOptions from "./components/CompareOptions";
+import Result from "./components/Result";
+import Side from "./components/Side";
+import { useMemo, useState } from "react";
+import extractSheet from "./services/extractSheet";
+import CompareOption from "./types/CompareOption";
 import XLSX from "xlsx";
 
 export default function App() {

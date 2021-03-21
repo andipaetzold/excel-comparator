@@ -4,8 +4,7 @@
     "description": "Simple Application that compares two Excel files",
     "scripts": {
         "start": "webpack-dev-server --mode development --hot --overlay --progress",
-        "build": "webpack --mode production --config webpack.config.js",
-        "firebase": "firebase"
+        "build": "webpack --mode production --config webpack.config.js"
     },
     "author": "Andreas Pätzold",
     "repository": {
@@ -28,7 +27,6 @@
         "@types/react": "16.14.5",
         "@types/react-dom": "16.9.11",
         "antd": "3.26.20",
-        "firebase-tools": "8.20.0",
         "i18next": "19.9.2",
         "i18next-browser-languagedetector": "4.3.1",
         "react": "16.14.0",

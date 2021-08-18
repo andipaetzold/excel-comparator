@@ -28,7 +28,7 @@
         "react-i18next": "11.11.4",
         "react-scripts": "4.0.3",
         "utility-types": "3.10.0",
-        "xlsx": "0.17.0"
+        "xlsx": "0.17.1"
     },
     "eslintConfig": {
         "extends": [
